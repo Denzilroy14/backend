@@ -57,7 +57,7 @@ def get_users():
             'age':user[1],
             'email':user[2],
             'feedback':user[3],
-            'image_url':f'http://localhost:5000/uploads/{user[4]}',
+            'image_url':f'https://frontendbackendeg.pythonanywhere.com/uploads/{user[4]}',
             'date':user[5],
             'time':user[6]
             })
