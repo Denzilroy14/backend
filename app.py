@@ -9,7 +9,7 @@ SPECIFIED_DATE='2025-08-28'
 app=Flask(__name__)
 CORS(app,origins=['*'])
 
-app.config['UPLOADER']='uploads'
+app.config['UPLOADER'] = os.path.join(app.root_path, 'uploads')
 def init_db():
     con=sqlite3.connect('database.db')
     con.execute('CREATE TABLE IF NOT EXISTS registration(name TEXT,age INTEGER,email TEXT,feedback TEXT,image TEXT)')
@@ -57,7 +57,7 @@ def get_users():
             'age':user[1],
             'email':user[2],
             'feedback':user[3],
-            'image_url':f'http://localhost:5000/uploads/{user[4]}',
+            'image_url':f'https://frontendbackendeg.pythonanywhere.com/register/uploads/{user[4]}',
             'date':user[5],
             'time':user[6]
             })
